@@ -29,7 +29,7 @@ function scaleUp(step, min, max){
 }
 // Create a MySQL database connection
 const dbConfig = {
-  host: 'viaduct.proxy.rlwy.net:27786',
+  host: 'mysql.railway.internal',
   user: 'root',
   password: 'a6-CF-dB-cEGDeDbH4GahhB-FaB62eFd',
   database: 'railway',
