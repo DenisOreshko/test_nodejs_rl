@@ -47,8 +47,16 @@ conn.connect((err) => {
 
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => { 
-  const sql = 'SELECT * FROM lot536';
+app.get('/', (req, res) => {  
+  conn.connect((err) => {
+    if (err) {
+        console.error('conn.connect() Database connection failed: ' + err.stack);
+        res.status(500).json({ error: 'conn.connect() Database query failed' });
+        return;
+    }
+    console.log('Connected to the database');
+  });
+  const sql = 'SELECT * FROM `lot536`';
   conn.query(sql, (err, results) => {
     if (err) {
         console.error('Error executing query: ' + err);
