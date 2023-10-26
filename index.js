@@ -1,6 +1,7 @@
-//const http = require('http');
 const express = require('express')
 const brain = require('brain.js')
+const mysql = require('mysql')
+const bodyParser = require('body-parser')
 const app = express()
 const port = 3000;
 const net = new brain.recurrent.LSTMTimeStep({
@@ -27,28 +28,14 @@ function scaleUp(step, min, max){
   };
 }
 
+app.use(bodyParser.json());
 app.get('/', (req, res) => {  
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
   res.send('Node js Railway 1.6.1!');
 });
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-
-/* const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  const net = new brain.recurrent.LSTMTimeStep({
-    inputSize: 5,
-    hiddenLayers: [15,25,25],
-    outputSize: 5
-  });
-  res.end('Node js Railway 1.6.1!');
-});
-
-server.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}/`);
-});
- */
 
