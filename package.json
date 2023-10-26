@@ -6,7 +6,7 @@
   "author": "alphasec",
   "license": "MIT",
    "dependencies": {
-    "brain.js": "^2.0.0-beta.2"
+    "brain.js": "^1.6.1"
   },
   "scripts": {
     "start": "node index.js"
