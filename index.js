@@ -54,8 +54,6 @@ app.get('/', (req, res) => {
         res.status(500).json({ error: 'Database query failed' });
         return;
     }
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
     res.send(results);      
   });
   
