@@ -46,8 +46,9 @@ conn.connect((err) => {
 });
 
 app.use(bodyParser.json());
-app.get('/', (req, res) => {  
-  const sql = 'SELECT * FROM `lot536`';
+
+app.get('/', (req, res) => { 
+  const sql = 'SELECT * FROM lot536';
   conn.query(sql, (err, results) => {
     if (err) {
         console.error('Error executing query: ' + err);
