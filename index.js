@@ -58,7 +58,7 @@ app.get('/', (req, res) => {
   });
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.send('Node js Railway 1.6.1 brain.js!');
+  res.send('Node js Railway 1.6.1 b!');
 });
 
 app.listen(port, () => {
