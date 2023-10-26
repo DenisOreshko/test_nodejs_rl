@@ -54,11 +54,11 @@ app.get('/', (req, res) => {
         res.status(500).json({ error: 'Database query failed' });
         return;
     }
-    res.json(results);        
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.send(results);      
   });
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.send('Node js Railway 1.6.1 b!',results);
+  
 });
 
 app.listen(port, () => {
