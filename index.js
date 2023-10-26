@@ -29,7 +29,7 @@ function scaleUp(step, min, max){
 }
 // Create a MySQL database connection
 const dbConfig = {
-  host: 'mysql.railway.internal',
+  host: 'mysql',
   user: 'root',
   password: 'a6-CF-dB-cEGDeDbH4GahhB-FaB62eFd',
   database: 'railway',
@@ -47,7 +47,7 @@ conn.connect((err) => {
 
 app.use(bodyParser.json());
 app.get('/', (req, res) => {  
-  const sql = 'SELECT * FROM `536`';
+  const sql = 'SELECT * FROM `lot536`';
   conn.query(sql, (err, results) => {
     if (err) {
         console.error('Error executing query: ' + err);
