@@ -51,7 +51,7 @@ app.get('/', (req, res) => {
   conn.query(sql, (err, results) => {
     if (err) {
         console.error('Error executing query: ' + err);
-        res.status(500).json({ error: 'Database query failed' });
+        res.status(500).json({ error: 'conn.query() Database query failed' });
         return;
     }
     res.send(results);      
